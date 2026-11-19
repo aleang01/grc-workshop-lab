@@ -1,0 +1,10 @@
+{
+  "name": "grc-workshop-activity",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspace",
+  "runArgs": [
+    "--userns=keep-id"
+  ],
+}
