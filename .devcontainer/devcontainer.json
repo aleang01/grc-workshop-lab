@@ -1,22 +1,10 @@
 {
-  "name": "grc-workshop-lab",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "remoteUser": "developer",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "name": "grc-workshop-activity",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "remoteUser": "node",
   "workspaceFolder": "/workspace",
-  "forwardPorts": [3000],
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      },
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
-    }
-  },
-  "postCreateCommand": "npm install"
+  "runArgs": [
+    "--userns=keep-id"
+  ],
 }
