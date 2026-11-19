@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive governance, risk, and compliance workshop" />
+    <title>GRC Workshop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#welcome" aria-label="GRC Workshop home">
+          <span class="brand-mark">G</span>
+          <span>GRC Workshop</span>
+        </a>
+        <div class="progress-wrap" aria-label="Workshop progress">
+          <span id="progressLabel">Getting started</span>
+          <div class="progress-track"><span id="progressBar"></span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section id="welcome" class="view active" aria-labelledby="welcomeTitle">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">FAST x MISSA ACTIVITY 1</p>
+            <h1 id="welcomeTitle">Can you think like a GRC analyst?</h1>
+            <p class="lede">
+              Help a fictional education technology company prepare for a new data-protection regulation.
+              Select controls, justify your decisions, and build a realistic implementation plan.
+            </p>
+          </div>
+          <form id="teamForm" class="panel setup-card">
+            <h2>Set up your team</h2>
+            <label for="teamName">Team Name</label>
+            <input id="teamName" name="teamName" required maxlength="60" placeholder="Enter your team name here..." />
+            <p></p>
+            <button class="button primary" type="submit">Enter the workshop <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section id="briefing" class="view" aria-labelledby="briefingTitle">
+        <div class="section-heading">
+          <p class="eyebrow">THE SCENARIO:</p>
+          <h1 id="briefingTitle">Crestview Healthcare Services</h1>
+          <p class="lede">Crestview Health Services is a fictional healthcare organization that operates several clinics and provides primary care and diagnostic services. It manages patient records and coordinates care across multiple locations.
+</p>
+        </div>
+        <div class="cards three-up">
+          <article class="panel stat-card"><span class="stat-value">250</span><span>full time employees</span></article>
+          <article class="panel stat-card"><span class="stat-value">90 days</span><span>until the regulation takes effect</span></article>
+          <article class="panel stat-card"><span class="stat-value">$90,000</span><span>compliance implementation budget</span></article>
+          <article class="panel stat-card"><span class="stat-value">$50,000</span><span>implementation budget</span></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel">
+            <h2>What the company handles</h2>
+            <ul class="clean-list">
+              <li>Names, email addresses, grades, accommodations, and payment-related information</li>
+              <li>A cloud-hosted learning platform used by 18 universities</li>
+              <li>Contractors supporting the help desk and software development</li>
+            </ul>
+          </article>
+          <article class="panel warning-panel">
+            <h2>Known warning signs</h2>
+            <ul class="clean-list">
+              <li>A former contractor retained access</li>
+              <li>Student accounts were compromised through phishing</li>
+              <li>Administrator activity is not logged consistently</li>
+              <li>A critical vulnerability stayed unpatched for 45 days</li>
+            </ul>
+          </article>
+        </div>
+        <div class="action-row"><button class="button primary" data-go="activity1">Start Activity 1 <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section id="activity1" class="view" aria-labelledby="activity1Title">
+        <div class="section-heading">
+          <p class="eyebrow">Activity 1 · Applying framework controls</p>
+          <h1 id="activity1Title">Choose the controls Northstar needs first.</h1>
+          <p class="lede">Select the controls you would recommend to address the regulatory requirements and known risks. Scoring will be added in the next build step.</p>
+        </div>
+        <div class="activity-layout">
+          <aside class="panel requirement-panel">
+            <div class="panel-heading"><h2>SDPR requirements</h2><span class="badge">9 requirements</span></div>
+            <ol class="requirement-list">
+              <li>Identify and classify student information</li>
+              <li>Restrict access based on job responsibilities</li>
+              <li>Remove access when people leave or change roles</li>
+              <li>Protect sensitive data at rest and in transit</li>
+              <li>Detect and investigate suspicious activity</li>
+              <li>Remediate critical vulnerabilities promptly</li>
+              <li>Assess third-party service providers</li>
+              <li>Report significant incidents within 24 hours</li>
+              <li>Maintain evidence that controls operate</li>
+            </ol>
+          </aside>
+          <div>
+            <div id="controlGrid" class="control-grid"></div>
+            <div class="sticky-action panel">
+              <div><strong id="selectionCount">0 controls selected</strong><span class="muted">You can revise your choices before submitting.</span></div>
+              <button id="submitActivity1" class="button primary" disabled>Submit control selections</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="activity1Complete" class="view" aria-labelledby="completeTitle">
+        <div class="completion-card panel">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow">Activity 1 saved</p>
+          <h1 id="completeTitle">Good start, <span id="completeTeamName"></span>.</h1>
+          <p class="lede">Your control selections are saved. In the next step, we will score requirement coverage and provide feedback.</p>
+          <div class="callout"><strong>Activity 2 is locked for now</strong><span>It will unlock after Activity 1 scoring is implemented and your team meets the completion threshold.</span></div>
+          <div class="action-row"><button class="button secondary" data-go="activity1">Review Activity 1</button><button class="button primary" disabled>Activity 2 locked</button></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="shell"><span>GRC Workshop prototype</span><button id="resetButton" class="text-button">Reset saved progress</button></div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
