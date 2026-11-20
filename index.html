@@ -12,12 +12,8 @@
       <div class="shell header-inner">
         <a class="brand" href="#welcome" aria-label="GRC Workshop home">
           <span class="brand-mark">G</span>
-          <span>GRC Workshop</span>
+          <span>GRC: Putting the Pieces Together Workshop</span>
         </a>
-        <div class="progress-wrap" aria-label="Workshop progress">
-          <span id="progressLabel">Getting started</span>
-          <div class="progress-track"><span id="progressBar"></span></div>
-        </div>
       </div>
     </header>
 
@@ -25,77 +21,87 @@
       <section id="welcome" class="view active" aria-labelledby="welcomeTitle">
         <div class="hero-grid">
           <div>
-            <p class="eyebrow">FAST x MISSA ACTIVITY 1</p>
+            <p class="eyebrow">MISSA x FAST</p>
             <h1 id="welcomeTitle">Can you think like a GRC analyst?</h1>
             <p class="lede">
-              Help a fictional education technology company prepare for a new data-protection regulation.
+              Help a fictional healthcare organization prepare to protect electronic protected health information (ePHI).
               Select controls, justify your decisions, and build a realistic implementation plan.
             </p>
           </div>
           <form id="teamForm" class="panel setup-card">
             <h2>Set up your team</h2>
-            <label for="teamName">Team Name</label>
-            <input id="teamName" name="teamName" required maxlength="60" placeholder="Enter your team name here..." />
+            <label for="teamName">Team or participant name</label>
+            <input id="teamName" name="teamName" required maxlength="60" placeholder="Enter your team name here" />
             <p></p>
-            <button class="button primary" type="submit">Enter the workshop <span aria-hidden="true">→</span></button>
+            <button class="button primary" type="submit">Start the workshop <span aria-hidden="true">→</span></button>
           </form>
         </div>
       </section>
 
       <section id="briefing" class="view" aria-labelledby="briefingTitle">
         <div class="section-heading">
-          <p class="eyebrow">THE SCENARIO:</p>
-          <h1 id="briefingTitle">Crestview Healthcare Services</h1>
-          <p class="lede">Crestview Health Services is a fictional healthcare organization that operates several clinics and provides primary care and diagnostic services. It manages patient records and coordinates care across multiple locations.
-</p>
+          <p class="eyebrow">Scenario briefing</p>
+          <h1 id="briefingTitle">Meet Crestview Healthcare Services</h1>
+          <p class="lede">You are a new hire to Crestview's compliance team. A new law was signed into effect requiring Crestview to implement proper cyber and data protection practices in 90 days, or risk fines.</p>
         </div>
         <div class="cards three-up">
-          <article class="panel stat-card"><span class="stat-value">250</span><span>full time employees</span></article>
+          <article class="panel stat-card"><span class="stat-value">30,000</span><span>current patients</span></article>
           <article class="panel stat-card"><span class="stat-value">90 days</span><span>until the regulation takes effect</span></article>
-          <article class="panel stat-card"><span class="stat-value">$90,000</span><span>compliance implementation budget</span></article>
-          <article class="panel stat-card"><span class="stat-value">$50,000</span><span>implementation budget</span></article>
+          <article class="panel stat-card"><span class="stat-value">$70,000</span><span>implementation budget</span></article>
         </div>
         <div class="content-grid">
           <article class="panel">
-            <h2>What the company handles</h2>
+            <h2>What the organization handles</h2>
             <ul class="clean-list">
-              <li>Names, email addresses, grades, accommodations, and payment-related information</li>
-              <li>A cloud-hosted learning platform used by 18 universities</li>
-              <li>Contractors supporting the help desk and software development</li>
+              <li>Patient names, contact information, medical histories, diagnoses, prescriptions, insurance, and payment information</li>
+              <li>A cloud-based Electronic Health Record (EHR) system across four clinics</li>
+              <li>Third-party vendors supporting hosting, billing, and appointment scheduling</li>
             </ul>
           </article>
           <article class="panel warning-panel">
-            <h2>Known warning signs</h2>
+            <h2>Current security challenges</h2>
             <ul class="clean-list">
-              <li>A former contractor retained access</li>
-              <li>Student accounts were compromised through phishing</li>
-              <li>Administrator activity is not logged consistently</li>
-              <li>A critical vulnerability stayed unpatched for 45 days</li>
+              <li>A former employee still has access to the EHR system</li>
+              <li>Audit logs do not consistently track who accesses or modifies patient records</li>
+              <li>There is no formal security assessment process for third-party vendors</li>
+              <li>A critical vulnerability in an outdated patient system has remained unpatched for more than 30 days</li>
+              <li>Patient information is transmitted by email without consistent encryption</li>
             </ul>
           </article>
         </div>
-        <div class="action-row"><button class="button primary" data-go="activity1">Start Activity 1 <span aria-hidden="true">→</span></button></div>
+        <div class="callout"><strong>Your Goal:</strong><span>Make the best framework and framework control choices that would prepare Crestview for this new regulation.</span></div>
+        <div class="action-row"><button class="button primary" data-go="frameworks">Start Activity 1 <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section id="frameworks" class="view" aria-labelledby="frameworksTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Activity 1 · Step 1 of 2</p>
+          <h1 id="frameworksTitle">Which GRC frameworks apply?</h1>
+          <p class="lede">Crestview needs to protect electronic protected health information. Select the single primary framework or requirement that best applies to this scenario.</p>
+        </div>
+        <div id="frameworkGrid" class="framework-grid"></div>
+        <div id="frameworkFeedback" class="framework-feedback" hidden></div>
+        <div class="action-row">
+          <button id="submitFrameworks" class="button primary">Check framework selection</button>
+          <button id="continueFromFrameworks" class="button secondary" data-go="activity1" hidden>Continue to control selection <span aria-hidden="true">→</span></button>
+        </div>
       </section>
 
       <section id="activity1" class="view" aria-labelledby="activity1Title">
         <div class="section-heading">
-          <p class="eyebrow">Activity 1 · Applying framework controls</p>
-          <h1 id="activity1Title">Choose the controls Northstar needs first.</h1>
+          <p class="eyebrow">Activity 1 · Step 2 of 2 · Applying framework controls</p>
+          <h1 id="activity1Title">Choose the controls Crestview needs first.</h1>
           <p class="lede">Select the controls you would recommend to address the regulatory requirements and known risks. Your selections will become the evidence pack for a one-page stakeholder report.</p>
         </div>
         <div class="activity-layout">
           <aside class="panel requirement-panel">
-            <div class="panel-heading"><h2>SDPR requirements</h2><span class="badge">9 requirements</span></div>
+            <div class="panel-heading"><h2>HIPAA cyber-relevant requirements</h2></div>
             <ol class="requirement-list">
-              <li>Identify and classify student information</li>
-              <li>Restrict access based on job responsibilities</li>
-              <li>Remove access when people leave or change roles</li>
-              <li>Protect sensitive data at rest and in transit</li>
-              <li>Detect and investigate suspicious activity</li>
-              <li>Remediate critical vulnerabilities promptly</li>
-              <li>Assess third-party service providers</li>
-              <li>Report significant incidents within 24 hours</li>
-              <li>Maintain evidence that controls operate</li>
+              <li>Perform risk analysis and risk management for ePHI</li>
+              <li>Limit ePHI access to authorized workforce members based on role</li>
+              <li>Record and examine activity in systems containing ePHI</li>
+              <li>Verify the identity of people or entities seeking access</li>
+              <li>Protect ePHI transmitted over electronic networks</li>
             </ol>
           </aside>
           <div>
@@ -111,38 +117,37 @@
       <section id="activity1Complete" class="view" aria-labelledby="completeTitle">
         <div class="section-heading">
           <p class="eyebrow">Activity 1 · Control summary</p>
-          <h1 id="completeTitle">Your recommendation for Northstar</h1>
+          <h1 id="completeTitle">Your recommendation for Crestview</h1>
           <p class="lede">Use this summary as the basis for a one-page stakeholder report and your mock presentation.</p>
         </div>
 
-        <div class="summary-banner panel">
-          <div><span class="summary-label">Preliminary requirement coverage</span><strong id="coverageScore">0%</strong></div>
+        <div class="summary-banner panel print-hide">
+          <div><span class="summary-label">Control review</span><strong id="coverageScore">Review pending</strong></div>
           <div><span class="summary-label">Controls selected</span><strong id="summaryControlCount">0</strong></div>
           <div><span class="summary-label">Activity status</span><strong id="activityStatus">Review needed</strong></div>
         </div>
 
         <div class="content-grid summary-grid">
           <article class="panel"><div class="panel-heading"><h2>Selected controls</h2><span class="badge" id="selectedBadge">0</span></div><div id="selectedControlSummary" class="summary-list"></div></article>
-          <article class="panel"><h2>Unaddressed or partially addressed</h2><div id="uncoveredRequirements" class="summary-list"></div></article>
+          <article class="panel print-hide"><h2>Hints for revision</h2><div id="uncoveredRequirements" class="summary-list"></div></article>
         </div>
 
         <div class="report-layout">
-          <article class="panel report-guide">
+          <article class="panel report-guide print-hide">
             <p class="eyebrow">One-page report guide</p>
             <h2>What your stakeholder report should say</h2>
             <ol class="report-steps">
-              <li><strong>Executive recommendation:</strong> State whether Northstar is ready and name the three most important actions.</li>
+              <li><strong>Executive recommendation:</strong> State whether Crestview is ready and name the three most important actions.</li>
               <li><strong>Top risks:</strong> Explain what could happen, who or what is affected, and why it matters now.</li>
               <li><strong>Selected controls:</strong> Connect each control to a regulation requirement and a risk.</li>
               <li><strong>Evidence:</strong> Name the artifact that would prove each control is operating.</li>
               <li><strong>Tradeoffs:</strong> Identify what you deferred, why you deferred it, and the residual risk.</li>
               <li><strong>Success measures:</strong> Include at least two measurable targets, such as “100% of terminated users disabled within 24 hours.”</li>
             </ol>
-            <div class="callout"><strong>Presentation tip</strong><span>Lead with risk and business impact. Do not simply read a list of framework controls.</span></div>
+            <div class="callout"><strong>REAL WORLD PRESENTATION TIP:</strong><span>Lead with describing the risk and impacts to business- do not simply read a list of framework controls.</span></div>
           </article>
-          <article class="panel rubric-panel">
-            <p class="eyebrow">Judging criteria · 100 points</p>
-            <h2>How the mock presentation will be judged</h2>
+          <article class="panel rubric-panel print-hide">
+            <h2>How your report will be judged</h2>
             <table class="rubric-table">
               <thead><tr><th>Category</th><th>Points</th></tr></thead>
               <tbody>
@@ -153,26 +158,112 @@
                 <tr class="total-row"><td>Total</td><td>100</td></tr>
               </tbody>
             </table>
-            <p class="muted">Judges should reward clear reasoning and defensible tradeoffs—not the longest control list.</p>
           </article>
         </div>
 
-        <article class="panel report-builder">
-          <div class="panel-heading"><div><p class="eyebrow">Draft your report</p><h2>Stakeholder briefing notes</h2></div><button id="printReport" class="button secondary">Print / save as PDF</button></div>
+        <article id="reportDraftSection" class="panel report-builder">
+          <div class="panel-heading"><div><p class="eyebrow">Draft your report</p><h2>Stakeholder briefing notes</h2></div><button id="printReport" class="button secondary"></button></div>
           <div class="report-form-grid">
             <div><label for="executiveSummary">Executive recommendation</label><textarea id="executiveSummary" rows="4" placeholder="Our recommendation is... because..."></textarea></div>
             <div><label for="topRisks">Top risks and business impact</label><textarea id="topRisks" rows="4" placeholder="The most serious risks are... They could affect..."></textarea></div>
             <div><label for="tradeoffs">Deferred controls and residual risk</label><textarea id="tradeoffs" rows="4" placeholder="We deferred... This leaves..."></textarea></div>
             <div><label for="successMeasures">Success measures</label><textarea id="successMeasures" rows="4" placeholder="We will know this works when..."></textarea></div>
           </div>
-          <p class="muted">Your notes are saved automatically in this browser. Keep the final report to one page.</p>
+          <p></p>
+          <p class="muted">Print your report to PDF. Then, submit it using the Submit Activity 1 Google form.</p>
         </article>
 
-        <div class="action-row"><button class="button secondary" data-go="activity1">Revise controls</button><button class="button primary" disabled>Activity 2 coming next</button></div>
+        <div class="action-row"><button class="button secondary" data-go="activity1">Go back to revise controls</button><button id="printCurrentReport" class="button secondary" type="button">Print current report / summary</button></div>
+        <form id="passwordForm" class="panel access-gate print-hide">
+          <div>
+            <h2>Unlock Activity 2</h2>
+            <p class="muted">Code will be provided after Activity 1 ends.</p>
+          </div>
+          <div class="access-gate-fields">
+            <div class="access-gate-input-row"><input id="activity2Password" type="password" autocomplete="off" required /><button class="button primary" type="submit">Unlock Activity 2</button></div>
+            <p id="passwordError" class="form-error" role="alert"></p>
+          </div>
+        </form>
+      </section>
+
+      <section id="activity2" class="view" aria-labelledby="activity2Title">
+        <div class="section-heading">
+          <p class="eyebrow">Activity 2 · Implementing compliance</p>
+          <h1 id="activity2Title">Turn your controls into a 90-day plan.</h1>
+          <p class="lede">You have $70,000 and a four-person security team. Select a practical combination of tools and procedures and see the projected costs and time needed to implement them.</p>
+        </div>
+        <div class="summary-banner panel budget-banner">
+          <div><span class="summary-label">Budget used</span><strong id="budgetUsed">$0</strong></div>
+          <div><span class="summary-label">Budget remaining</span><strong id="budgetRemaining">$70,000</strong></div>
+          <div><span class="summary-label">Timeline</span><strong id="timelineStatus">0 / 13 weeks</strong></div>
+        </div>
+        <div id="budgetAlert" class="budget-alert" role="status"></div>
+        <div class="activity-layout implementation-layout">
+          <aside class="panel requirement-panel">
+            <div class="panel-heading"><h2>Your Activity 1 focus</h2><span class="badge">Inherited</span></div>
+            <div id="activity1Focus" class="summary-list"></div>
+            <div class="callout"><strong>Decision rule</strong><span>Prioritize risk reduction and evidence. Expensive tools are not automatically the best answer.</span></div>
+          </aside>
+          <div>
+            <div id="implementationGrid" class="implementation-grid"></div>
+            <div class="sticky-action panel">
+              <div><strong id="implementationCount">0 options selected</strong><span class="muted">Stay within $70,000 and 13 weeks.</span></div>
+              <button id="submitActivity2" class="button primary" disabled>Review implementation plan</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="activity2Complete" class="view" aria-labelledby="activity2CompleteTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Activity 2 · Summary</p>
+          <h1 id="activity2CompleteTitle">Review your implementation plan</h1>
+        </div>
+        <div class="summary-banner panel">
+          <div><span class="summary-label">Plan cost</span><strong id="finalPlanCost">$0</strong></div>
+          <div><span class="summary-label">Implementation time</span><strong id="finalPlanTime">0 weeks</strong></div>
+          <div><span class="summary-label">Options selected</span><strong id="finalPlanCount">0</strong></div>
+        </div>
+        <div class="content-grid summary-grid">
+          <article class="panel"><h2>Selected implementation actions</h2><div id="finalPlanSummary" class="summary-list"></div></article>
+          <article class="panel"><h2>Residual risks to disclose</h2><div id="residualRisks" class="summary-list"></div></article>
+        </div>
+        <article class="panel report-builder">
+          <div class="panel-heading"><div><p class="eyebrow">Mock presentation notes</p><h2>Complete the stakeholder briefing</h2></div><button id="printActivity2" class="button secondary">Print / save as PDF</button></div>
+          <div class="report-form-grid">
+            <div><label for="implementationRecommendation">Recommendation to stakeholders</label><textarea id="implementationRecommendation" rows="4" placeholder="Approve this plan because..."></textarea></div>
+            <div><label for="budgetRationale">Budget and prioritization rationale</label><textarea id="budgetRationale" rows="4" placeholder="We prioritized... and deferred... because..."></textarea></div>
+            <div><label for="implementationEvidence">Evidence and owners</label><textarea id="implementationEvidence" rows="4" placeholder="The owners are... Evidence will include..."></textarea></div>
+            <div><label for="residualRiskNotes">Residual risk and next steps</label><textarea id="residualRiskNotes" rows="4" placeholder="The remaining risk is... Our next step is..."></textarea></div>
+          </div>
+          <p class="muted">A strong briefing explains what the plan accomplishes, what it cannot accomplish yet, and how leadership will know it worked.</p>
+        </article>
+        <div class="action-row"><button class="button secondary" data-go="activity2">Revise implementation plan</button><button class="button primary" id="finishWorkshop">Finish workshop</button></div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="shell"><span>GRC Workshop prototype</span><button id="resetButton" class="text-button">Reset saved progress</button></div></footer>
+    <div id="hipaaDetailsModal" class="modal-backdrop" hidden>
+      <section class="panel details-modal" role="dialog" aria-modal="true" aria-labelledby="hipaaDetailsTitle">
+        <button id="hipaaDetailsClose" class="modal-close" type="button" aria-label="Close HIPAA definition">×</button>
+        <p class="eyebrow">Official control reference</p>
+        <h2 id="hipaaDetailsTitle">HIPAA control</h2>
+        <p id="hipaaDetailsReference" class="control-meta"></p>
+        <p id="hipaaDetailsDefinition" class="details-definition"></p>
+        <a class="button secondary details-link" href="https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html" target="_blank" rel="noopener">Open HHS HIPAA Security Rule summary</a>
+      </section>
+    </div>
+
+    <div id="completionModal" class="modal-backdrop" hidden>
+      <section class="panel completion-modal" role="dialog" aria-modal="true" aria-labelledby="completionTitle">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">Workshop complete</p>
+        <h2 id="completionTitle">Congratulations!</h2>
+        <p>You completed the Crestview healthcare GRC lab. You practiced selecting HIPAA-aligned controls, evaluating tradeoffs, and presenting an implementation plan to stakeholders.</p>
+        <button id="completionClose" class="button primary" type="button">Close</button>
+      </section>
+    </div>
+
+    <footer class="site-footer"><div class="shell"><span>A MISSA x FAST Collaboration</span><button id="resetButton" class="text-button">Reset saved progress</button></div></footer>
     <script src="app.js"></script>
   </body>
 </html>
